@@ -1,5 +1,5 @@
 {
-  "name": "@shopify/draggable",
+  "name": "@dancecuts/draggable",
   "version": "1.0.0-beta.13",
   "private": false,
   "license": "MIT",
@@ -81,6 +81,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "@shopify:registry": "https://registry.npmjs.org"
+    "@dancecuts:registry": "https://registry.npmjs.org"
   }
 }

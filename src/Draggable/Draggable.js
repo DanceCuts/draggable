@@ -1,10 +1,10 @@
-import {closest} from 'shared/utils';
+import { closest } from 'shared/utils';
 
-import {Announcement, Focusable, Mirror, Scrollable} from './Plugins';
+import { Announcement, Focusable, Mirror, Scrollable } from './Plugins';
 
 import Emitter from './Emitter';
-import {MouseSensor, TouchSensor} from './Sensors';
-import {DraggableInitializedEvent, DraggableDestroyEvent} from './DraggableEvent';
+import { MouseSensor, TouchSensor } from './Sensors';
+import { DraggableInitializedEvent, DraggableDestroyEvent } from './DraggableEvent';
 
 import {
   DragStartEvent,
@@ -76,7 +76,7 @@ export default class Draggable {
    * @property {Scrollable} Plugins.Scrollable
    * @type {Object}
    */
-  static Plugins = {Announcement, Focusable, Mirror, Scrollable};
+  static Plugins = { Announcement, Focusable, Mirror, Scrollable };
 
   /**
    * Default sensors draggable uses
@@ -86,7 +86,7 @@ export default class Draggable {
    * @property {TouchSensor} Sensors.TouchSensor
    * @type {Object}
    */
-  static Sensors = {MouseSensor, TouchSensor};
+  static Sensors = { MouseSensor, TouchSensor };
 
   /**
    * Draggable constructor.
@@ -178,7 +178,7 @@ export default class Draggable {
       draggable: this,
     });
 
-    this.on('mirror:created', ({mirror}) => (this.mirror = mirror));
+    this.on('mirror:created', ({ mirror }) => (this.mirror = mirror));
     this.on('mirror:destroy', () => (this.mirror = null));
 
     this.trigger(draggableInitializedEvent);
@@ -396,7 +396,7 @@ export default class Draggable {
    */
   [onDragStart](event) {
     const sensorEvent = getSensorEvent(event);
-    const {target, container, originalSource} = sensorEvent;
+    const { target, container, originalSource } = sensorEvent;
 
     if (!this.containers.includes(container)) {
       return;
@@ -444,7 +444,7 @@ export default class Draggable {
 
     requestAnimationFrame(() => {
       const oldSensorEvent = getSensorEvent(event);
-      const newSensorEvent = oldSensorEvent.clone({target: this.source});
+      const newSensorEvent = oldSensorEvent.clone({ target: this.source });
 
       this[onDragMove]({
         ...event,
@@ -464,7 +464,7 @@ export default class Draggable {
     }
 
     const sensorEvent = getSensorEvent(event);
-    const {container} = sensorEvent;
+    const { container } = sensorEvent;
     let target = sensorEvent.target;
 
     const dragMoveEvent = new DragMoveEvent({
