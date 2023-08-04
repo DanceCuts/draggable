@@ -418,7 +418,6 @@ export default class Draggable {
 
     this.source = this.originalSource.cloneNode(true);
     this.originalSource.parentNode.insertBefore(this.source, this.originalSource);
-    this.originalSource.style.display = 'none';
 
     const dragStartEvent = new DragStartEvent({
       source: this.source,
